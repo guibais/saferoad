@@ -1,0 +1,42 @@
+.icon-size{
+    font-size: 40px;
+    color:#000;
+}
+.btn-voltar-assist{
+    --background: transparent;
+}
+.text-decoration{
+    font-size:25px;
+    font-weight: bold;
+}
+.ion-padding-top{
+    padding-top: 10px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #ccc;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+  }
+  
+  /* Darker chat container */
+  .darker {
+    border-color: #ccc;
+    background-color: #AF72FE;
+    float: right;
+  }
+
+  /* Style time text */
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+  
+  /* Style time text */
+  .time-left {
+    float: left;
+    color: #999;
+  }

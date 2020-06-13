@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'voice-assist',
+    loadChildren: () => import('./voice-assist/voice-assist.module').then( m => m.VoiceAssistPageModule)
+  },
 ];
 
 @NgModule({
