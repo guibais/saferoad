@@ -1,0 +1,7 @@
+{
+  "name": "saferoad",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
