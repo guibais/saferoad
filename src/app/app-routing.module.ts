@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'voice-assist',
     loadChildren: () => import('./voice-assist/voice-assist.module').then( m => m.VoiceAssistPageModule)
+  },  {
+    path: 'dash',
+    loadChildren: () => import('./dash/dash.module').then( m => m.DashPageModule)
   },
+
 ];
 
 @NgModule({
