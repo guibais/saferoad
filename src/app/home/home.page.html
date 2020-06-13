@@ -1,18 +1,40 @@
-
-<ion-content class="homepage__content" [fullscreen]="true">
-  <div class="homepage__content--logo"><img src="../../assets/logo-saferoad.png" alt="">
+<ion-content class="homepage__content">
+  <div class="homepage__content--logo">
+    <img src="../../assets/logo-saferoad.png" alt="" />
   </div>
   <div class="homepage__content__container">
-    <div class="homepage__content__container--btn-voz">
-      <ion-button class="" href="#">
-        <p>
-          <ion-icon class="homepage__content__container--icone-voz" name="mic"></ion-icon>
-         </p>
-         <hr>
-      Assistente por voz
+    <div class="homepage__content__container--buttons">
+      <ion-button class="homepage__content__container--buttons--btn-voz">
+        <div class="homepage__content__container--buttons--btn-voz--container">
+          <div>
+            <ion-icon name="mic"></ion-icon>
+          </div>
+          <ion-item-divider></ion-item-divider>
+          <div>
+            Assistente por voz
+          </div>
+        </div>
       </ion-button>
 
+      <ion-button class="homepage__content__container--buttons--btn-sos">
+        <div class="homepage__content__container--buttons--btn-sos--container">
+          <div>
+            <ion-icon name="warning-sharp"></ion-icon>
+          </div>
+          <ion-item-divider></ion-item-divider>
+          <div>
+            Chamar Emergência
+          </div>
+        </div>
+      </ion-button>
     </div>
-      <ion-button class="home__content__container--btn-sos" href="#">Emergencia</ion-button>
+    <div class="homepage__content__container--footer">
+      <div>
+        <div class="homepage__content__container--footer--seemore">
+          ARRASTE PARA VER MAIS
+        </div>
+        <div class="homepage__content__container--footer--line"></div>
+      </div>
     </div>
-  </ion-content>
+  </div>
+</ion-content>

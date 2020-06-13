@@ -1,119 +1,123 @@
-.icon-size{
-    font-size: 40px;
-    color:#000;
-}
-.btn-voltar-assist{
-    --background: transparent;
-}
-.text-decoration{
-    position: flex;
-    font-size:25px;
-    font-weight: bold;
-}
-.ion-padding-top{
-    padding-top: 10px;
-}
-
-.align-center{
-    font-family: helvetica;
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-}
-.recorder-button{
-    font-size: 30px;
-    
-}
-
-.chat {
+.voice-assist {
+  background: #e5e5e5;
+  &__header {
+    ion-toolbar {
+    }
+    &--back {
+      --background: #e3e3f2;
+      ion-icon {
+        color: #fff;
+      }
+    }
+    &--title {
+      text-overflow: unset;
+      white-space: usnet;
+      padding-top: 10px;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      display: flex;
+      align-items: center;
+      color: #000;
+    }
+  }
+  &__content {
+    --background: #f7f5fb;
+    &__chat {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      &--mine {
+        align-items: flex-end;
+        .message {
+          color: white;
+          text-align: right;
+          margin-left: 21%;
+          background: linear-gradient(
+            2.03deg,
+            rgba(158, 81, 255, 0.8) 27.09%,
+            rgba(210, 81, 255, 0.86) 64.13%
+          );
+          position: relative;
+        }
+        &--last {
+          border-bottom-right-radius: 0px !important;
+        }
+      }
+      &--yours {
+        align-items: flex-start;
+        div:first-child {
+          margin-top: 1.6rem;
+        }
+        .message {
+          margin-right: 21%;
+          position: relative;
+          background: #e3eaf2;
+        }
+        &--last {
+          border-bottom-left-radius: 0px !important;
+        }
+      }
+    }
+  }
+  &__footer {
+    position: absolute;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-  
-  .messages {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .message {
-    border-radius: 20px;
-    padding: 8px 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-  
-  .yours {
-    align-items: flex-start;
-  }
-  
-  .yours .message {
-    margin-right: 25%;
-    background-color: #eee;
-    position: relative;
-  }
-  
-  .yours .message.last:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    left: -7px;
-    height: 20px;
-    width: 20px;
-    background: #eee;
-    border-bottom-right-radius: 15px;
-  }
-  .yours .message.last:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: -10px;
-    width: 10px;
-    height: 20px;
-    background: white;
-    border-bottom-right-radius: 10px;
-  }
-  
-  .mine {
-    align-items: flex-end;
-  }
-  
-  .mine .message {
-    color: white;
-    margin-left: 25%;
-    background: linear-gradient(to bottom, #9E51FF 0%, #D251FF 100%);
-    background-attachment: fixed;
-    position: relative;
-  }
-  
-  .mine .message.last:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    right: -8px;
-    height: 20px;
-    width: 20px;
-    background: linear-gradient(to bottom, #9E51FF 0%, #D251FF 100%);
-    background-attachment: fixed;
-    border-bottom-left-radius: 15px;
-  }
-  
-  .mine .message.last:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    right: -10px;
-    width: 10px;
-    height: 20px;
-    background: white;
-    border-bottom-left-radius: 10px;
-  }
-  
+    height: 92px;
+    left: 0px;
+    top: 720px;
 
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .record-button {
+      background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+      width: 70px;
+      height: 70px;
+      position: relative;
+      border-radius: 50%;
+      div {
+        background-color: #fff;
+        top: 30%;
+        left: 30%;
+        width: 40%;
+        height: 40%;
+        position: relative;
+        border-radius: 50%;
+        div {
+          background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+          top: 25%;
+          left: 25%;
+          width: 50%;
+          height: 50%;
+          position: relative;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.align-center {
+  font-family: helvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 25px;
+  padding: 1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 22px;
+}

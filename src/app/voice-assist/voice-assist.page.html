@@ -1,43 +1,46 @@
-<ion-content>
- 
-  <ion-row class="ion-align-items-start">
-    <ion-col  size="2.5" size-sm>
-      <ion-button fill="clear"><ion-icon class="icon-size" name="arrow-back-circle-outline"></ion-icon> </ion-button>
-    </ion-col>
-    <ion-col class="ion-padding-top" size="9" size-sm>
-      <ion-text class="text-decoration">
-     Pesquisa por Voz
-      </ion-text>
-    </ion-col>
-  </ion-row>
-
-<div class="align-center">
-<div class="chat">
-  <div class="mine messages">
-    <div class="message last">
-      Onde eu posso parar meu caminhão?
-     </div>
+<ion-header mode="md" class="ion-no-border voice-assist__header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        shape="round"
+        slot="icon-only"
+        class="voice-assist__header--back"
+      >
+        <ion-icon name="chevron-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="voice-assist__header--title"
+      >Pesquisa por <br />
+      Voz</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+<ion-content class="voice-assist__content">
+  <div class="align-center">
+    <div class="voice-assist__content__chat">
+      <div class="voice-assist__content__chat--mine messages">
+        <div class="message voice-assist__content__chat--mine--last">
+          Onde eu posso parar meu caminhão?
+        </div>
+      </div>
+      <div class="voice-assist__content__chat--yours messages">
+        <div class="message">
+          Olá João! Você pode parar no posto de gasolina mais próximo.
+        </div>
+        <div class="message">
+          Gostaria de ver as informações?
+        </div>
+        <div class="message voice-assist__content__chat--yours--last">
+          <img src="../../assets/conversa1.png" />
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="yours messages">
-    <div class="message">
-      Olá João! Você pode parar no posto de gasolina mais próximo.
-    </div>
-    <div class="message">
-      Gostaria de ver as informações?
-    </div>
-    <div class="message last">
-      <img src="../../assets/conversa1.png">
-    </div>
-  </div>
-
-</div>
-</div>
-<ion-row class="ion-align-items-start">
-  <ion-col size="12" size-sm>
-    <ion-button class="btn-" fill="clear"><ion-icon class="recorder-button" name="mic"></ion-icon> </ion-button>
-  </ion-col>
-</ion-row>
-
-
-
 </ion-content>
+<div class="voice-assist__footer">
+  <div class="record-button">
+    <div>
+      <div></div>
+    </div>
+  </div>
+</div>
