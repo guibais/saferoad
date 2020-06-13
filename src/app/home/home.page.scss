@@ -1,0 +1,50 @@
+.home-bg {
+  --background: linear-gradient(rgba(50, 4, 253, 0.9), rgba(153, 7, 250, 0.9)), url("../../assets/bg-saferoad.jpg") no-repeat center center / cover;
+}
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.btn-voz{
+  width: 314px;
+  height: 250px;
+  margin-top: 150px;
+  padding-bottom: 34px;
+  --background:#4A7DFF;
+  --box-shadow: -5px 5px 5px #3459B9;
+}
+.btn-sos{
+  width: 314px;
+  height: 250px;
+  padding-bottom: 34px;
+  --background: #F0595F;
+  --box-shadow: -5px 5px 5px #F0595F;
+}
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
