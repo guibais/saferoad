@@ -33,16 +33,22 @@
       }
 
       &--btn-voz {
-        height: 100%;
+        height: auto;
         --background: #4a7dff;
         --box-shadow: -5px 5px 5px #3459b9;
+
         &--container {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding: 1rem 0;
           ion-item-divider {
+            margin-bottom: 0.3rem;
             --color: #fff;
             min-height: 2px !important;
           }
           div {
-            padding: 2rem 0;
             ion-icon {
               font-size: 6.5rem;
             }
@@ -50,16 +56,21 @@
         }
       }
       &--btn-sos {
-        height: 100%;
+        height: auto;
         --background: #f0595f;
         --box-shadow: -5px 5px 5px rgba(175, 1, 8, 0.48);
         &--container {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding: 1rem 0;
           ion-item-divider {
+            margin-bottom: 0.3rem;
             --color: #fff;
             min-height: 2px !important;
           }
           div {
-            padding: 2rem 0;
             ion-icon {
               font-size: 6.5rem;
             }
@@ -93,6 +104,62 @@
         margin: auto;
         margin-top: 0.8rem;
       }
+    }
+  }
+}
+
+@media (max-height: 644px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 6rem !important;
+    }
+  }
+}
+
+@media (max-height: 620px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 5.5rem !important;
+    }
+  }
+}
+
+@media (max-height: 600px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4.8rem !important;
+    }
+  }
+}
+
+@media (max-height: 585px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4.5rem !important;
+    }
+  }
+}
+
+@media (max-height: 575px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4rem !important;
+    }
+  }
+}
+
+@media (max-height: 560px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 3rem !important;
+    }
+  }
+}
+
+@media (max-height: 530px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 2rem !important;
     }
   }
 }
