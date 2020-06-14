@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-button
         (click)="location.back()"
-        shape="round"
         slot="icon-only"
         class="voice-assist__header--back"
+        fill="clear"
       >
         <ion-icon name="chevron-back-sharp"></ion-icon>
       </ion-button>
@@ -16,7 +16,7 @@
     >
   </ion-toolbar>
 </ion-header>
-<ion-content class="voice-assist__content">
+<ion-content fullscreen class="voice-assist__content">
   <div class="align-center">
     <div class="voice-assist__content__chat">
       <div class="voice-assist__content__chat--mine messages">
