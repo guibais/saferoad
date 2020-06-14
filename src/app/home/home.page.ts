@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   slideOpts = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400,
     direction: 'vertical',
   };
