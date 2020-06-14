@@ -1,15 +1,21 @@
 .voice-assist {
   background: #e5e5e5;
-  &__header {
+  &__header{
     ion-toolbar {
-    }
+      --background: #f7f5fb;
+  }
     &--back {
-      --background: #e3e3f2;
+
       ion-icon {
+        padding: 8px;
+        border-radius: 20px;
+        background: #E3E3F2;
         color: #fff;
+        font-size: 15px;
       }
     }
     &--title {
+
       text-overflow: unset;
       white-space: usnet;
       padding-top: 10px;
@@ -68,8 +74,8 @@
     height: 92px;
     left: 0px;
     bottom: 0px;
-
-    background: #fff;
+    box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.12);
+    background: #f7f5fb;
     display: flex;
     justify-content: center;
     align-items: center;
