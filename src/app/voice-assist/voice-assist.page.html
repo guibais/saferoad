@@ -19,20 +19,21 @@
 <ion-content fullscreen class="voice-assist__content">
   <div class="align-center">
     <div class="voice-assist__content__chat">
-      <div class="voice-assist__content__chat--mine messages">
-        <div class="message voice-assist__content__chat--mine--last">
-          Onde eu posso parar meu caminhão?
+      <div
+        *ngFor="let message of messages; let i = index"
+        [ngClass]="['messages', message.me ? 'voice-assist__content__chat--mine' : 'voice-assist__content__chat--yours']"
+      >
+        <div
+          *ngIf="message.me"
+          [ngClass]="['message', messages[i+1] ? !messages[i+1].me ? 'voice-assist__content__chat--mine--last' : '' : 'voice-assist__content__chat--mine--last']"
+        >
+          {{message.text}}
         </div>
-      </div>
-      <div class="voice-assist__content__chat--yours messages">
-        <div class="message">
-          Olá João! Você pode parar no posto de gasolina mais próximo.
-        </div>
-        <div class="message">
-          Gostaria de ver as informações?
-        </div>
-        <div class="message voice-assist__content__chat--yours--last">
-          <img src="../../assets/conversa1.png" />
+        <div
+          *ngIf="!message.me"
+          [ngClass]="['message', messages[i+1] ? messages[i+1].me ? 'voice-assist__content__chat--yours--last' : '' : 'voice-assist__content__chat--yours--last']"
+        >
+          {{message.text}}
         </div>
       </div>
     </div>

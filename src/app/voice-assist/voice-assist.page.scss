@@ -1,21 +1,19 @@
 .voice-assist {
   background: #e5e5e5;
-  &__header{
+  &__header {
     ion-toolbar {
       --background: #f7f5fb;
-  }
+    }
     &--back {
-
       ion-icon {
         padding: 8px;
         border-radius: 20px;
-        background: #E3E3F2;
+        background: #e3e3f2;
         color: #fff;
         font-size: 15px;
       }
     }
     &--title {
-
       text-overflow: unset;
       white-space: usnet;
       padding-top: 10px;
@@ -50,13 +48,12 @@
         }
         &--last {
           border-bottom-right-radius: 0px !important;
+          margin-bottom: 1.6rem !important;
         }
       }
       &--yours {
         align-items: flex-start;
-        div:first-child {
-          margin-top: 1.6rem;
-        }
+
         .message {
           margin-right: 21%;
           position: relative;
@@ -64,6 +61,7 @@
         }
         &--last {
           border-bottom-left-radius: 0px !important;
+          margin-bottom: 1.6rem !important;
         }
       }
     }
