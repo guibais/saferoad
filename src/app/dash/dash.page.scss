@@ -1,12 +1,80 @@
 .dashpage {
   &__main {
+
     background: linear-gradient(
       6.31deg,
       #9e51ff 27.09%,
       rgba(210, 81, 255, 0.674696) 64.13%
-    );
+    ),url('../../assets/bg-dash.png') no-repeat center center / cover;;
     box-shadow: 0px 6px 8px rgba(81, 119, 255, 0.3);
     border-radius: 0px 0px 50px 50px;
     height: 40vh;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+
+    
+    &--top{
+ 
+      img{
+        width: 110px;
+        display: block;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+  
+      }
+      &--icon{    
+         font-size: 25px;
+        color: #fff;
+        display:flex;
+        justify-content: center;
+      }
+    }
+    &--text-question{
+      color:white;
+      display: flex;
+      justify-content: center;
+    }
+    &--separador{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      ion-item-divider{
+        margin:auto;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        --color: #fff;
+        min-height: 1px !important;
+      }
+
+    }
+
+    &--buttons{
+      display: flex;
+      padding-bottom: 30px;
+      justify-content: center;
+      &--bem{
+        height: 100%;
+      --background: linear-gradient(90deg, #0EA564 0%, #39B98F 100%);
+      border: 1px solid #FFFFFF;
+      --box-sizing: border-box;
+      --box-shadow: -3px 3px 4px rgba(40, 222, 144, 0.6);
+      border-radius: 10px;
+
+      &--div{
+        padding-right: 10px;
+      }
+      }
+      &--mal{
+        height: 100%;
+      --background: linear-gradient(90deg, #EC3B43 0%, #F15B61 100%);
+      border: 1px solid #FFFFFF;
+      --box-sizing: border-box;
+      --box-shadow: -3px 3px 4px rgba(255, 147, 152, 0.6);
+      border-radius: 10px;
+      }
+    }
   }
 }

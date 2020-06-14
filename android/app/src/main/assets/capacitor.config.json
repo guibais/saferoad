@@ -9,7 +9,9 @@
       "localhost:8100/*"
     ],
     "url": "http://localhost:8100",
-    "cleartext": true
+    "cleartext": true,
+    "originalUrl": "http://localhost:8100",
+    "originalCleartext": true
   },
   "plugins": {
     "SplashScreen": {
