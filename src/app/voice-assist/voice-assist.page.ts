@@ -107,6 +107,7 @@ export class VoiceAssistPage implements OnInit {
       button: false,
       me: false,
     });
+    await this._voiceAssist.speaktext(message.title);
     this.messages.push({
       text: '',
       loading: true,
@@ -122,14 +123,22 @@ export class VoiceAssistPage implements OnInit {
     );
 
     this.messages.pop();
-    this.messages.push({
-      button: nearbyPlaces.slice(0, 5).map((place) => ({
-        id: place.id,
-        name: place.name,
-        location: place.geometry.location,
-      })),
-      me: false,
-    });
+    if (nearbyPlaces.length > 0) {
+      this.messages.push({
+        button: nearbyPlaces.slice(0, 5).map((place) => ({
+          id: place.id,
+          name: place.name,
+          location: place.geometry.location,
+        })),
+        me: false,
+      });
+    } else {
+      const notFound: string = 'Desculpe, não há nenhum local por perto';
+      this.messages.push({
+        text: notFound,
+      });
+      await this._voiceAssist.speaktext(notFound);
+    }
   }
 
   async launchMap(location) {

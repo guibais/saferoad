@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 export const googleAPIKey = environment.googleAPIKey;
 
 @NgModule({
@@ -29,6 +30,7 @@ export const googleAPIKey = environment.googleAPIKey;
     StatusBar,
     SplashScreen,
     SpeechRecognition,
+    TextToSpeech,
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
