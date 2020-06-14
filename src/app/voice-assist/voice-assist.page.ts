@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
+import { VoiceAssistService } from '../services/voice-assist.service';
+import { PlacesService } from '../services/places.service';
 
 @Component({
   selector: 'app-voice-assist',
@@ -8,21 +10,12 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 })
 export class VoiceAssistPage implements OnInit {
   isRecording = false;
-  messages = [
-    {
-      text: 'Onde eu posso parar meu caminhão?',
-      me: true,
-    },
-    {
-      text: 'Olá João! Você pode parar no posto de gasolina mais próximo.',
-      me: false,
-    },
-    {
-      text: 'Gostaria de ver as informações?',
-      me: false,
-    },
-  ];
-  constructor(private speechRecognition: SpeechRecognition) {}
+  messages = [];
+  constructor(
+    private speechRecognition: SpeechRecognition,
+    private _voiceAssist: VoiceAssistService,
+    private _places: PlacesService
+  ) {}
 
   ngOnInit() {}
 
@@ -30,24 +23,25 @@ export class VoiceAssistPage implements OnInit {
     const hasPermission = await this.speechRecognition.hasPermission();
     if (hasPermission) {
       this.isRecording = true;
-      let options = {
-        language: 'pt-BR',
-        matches: 1,
-        prompt: 'Ouvindo...',
-        showPopup: true,
-      };
-      this.speechRecognition.startListening(options).subscribe(
-        (matches: string[]) => {
-          console.log(matches);
-          this.isRecording = false;
-        },
-        (onerror) => {
-          console.log('error:', onerror);
-          this.isRecording = false;
+      try {
+        const speech = await this._voiceAssist.getSpeech();
+        this.isRecording = false;
+        this.messages.push({
+          text: speech[0],
+          me: true,
+        });
+        const request = this._voiceAssist.identifyRequest(speech[0]);
+        if (request == 'farmacia') {
+          this.messages.push({
+            text: 'Olá, Aqui estão as farmácias mais próximas',
+            me: false,
+          });
+          const myLocation = await this._places.getMyLocation();
+          await this._places.getNearbyPlaces(myLocation.coords, 'pharmacy');
         }
-      );
+      } catch (ex) {}
     } else {
-      const askPermission = await this.speechRecognition.requestPermission();
+      await this.speechRecognition.requestPermission();
       this.toggleRecording();
     }
   }
