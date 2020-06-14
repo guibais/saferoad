@@ -30,7 +30,6 @@ export const googleAPIKey = environment.googleAPIKey;
     SplashScreen,
     SpeechRecognition,
     Geolocation,
-
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

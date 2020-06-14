@@ -24,16 +24,40 @@
         [ngClass]="['messages', message.me ? 'voice-assist__content__chat--mine' : 'voice-assist__content__chat--yours']"
       >
         <div
-          *ngIf="message.me"
+          class="voice-assist__content__chat__buttons"
+          *ngIf="message.button"
+        >
+          <ion-button
+            (click)="launchMap(button.location)"
+            class="voice-assist__content__chat__buttons--button"
+            *ngFor="let button of message.button"
+          >
+            {{button.name}}
+          </ion-button>
+        </div>
+        <div
+          *ngIf="!message.button && message.me"
           [ngClass]="['message', messages[i+1] ? !messages[i+1].me ? 'voice-assist__content__chat--mine--last' : '' : 'voice-assist__content__chat--mine--last']"
         >
           {{message.text}}
+          <div *ngIf="message.loading" class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
         <div
-          *ngIf="!message.me"
+          *ngIf="!message.button && !message.me"
           [ngClass]="['message', messages[i+1] ? messages[i+1].me ? 'voice-assist__content__chat--yours--last' : '' : 'voice-assist__content__chat--yours--last']"
         >
           {{message.text}}
+          <div *ngIf="message.loading" class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>

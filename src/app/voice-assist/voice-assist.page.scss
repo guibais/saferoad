@@ -33,12 +33,27 @@
       flex-direction: column;
       padding: 10px;
       padding-bottom: 92px;
+      &__buttons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &--button {
+          white-space: inherit;
+          --background: #ffffff;
+          --box-shadow: -3px 3px 4px rgba(0, 0, 0, 0.1);
+          --border-radius: 25px;
+          --color: #000;
+        }
+      }
       &--mine {
         align-items: flex-end;
+        div {
+          margin-left: 21%;
+        }
         .message {
           color: white;
           text-align: right;
-          margin-left: 21%;
+
           background: linear-gradient(
             2.03deg,
             rgba(158, 81, 255, 0.8) 27.09%,
@@ -53,9 +68,10 @@
       }
       &--yours {
         align-items: flex-start;
-
-        .message {
+        div {
           margin-right: 21%;
+        }
+        .message {
           position: relative;
           background: #e3eaf2;
         }
@@ -202,5 +218,61 @@
   }
   100% {
     background-position: 0% 42%;
+  }
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }

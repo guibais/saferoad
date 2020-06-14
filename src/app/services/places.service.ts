@@ -14,7 +14,6 @@ export const googleAPIKey = environment.googleAPIKey;
 })
 export class PlacesService {
   //Google Places Variables
-  placeService: any;
   placeDetailsService: any;
   placeServiceIsReady: true;
   selectedPlaces = [];
@@ -35,26 +34,27 @@ export class PlacesService {
     return this.geolocation.getCurrentPosition();
   }
 
-  getNearbyPlaces(location: any, place: string) {
-    console.log('estou aqui');
-
+  getNearbyPlaces(location: any, place: string = null, name: string = null) {
     if (this.placeServiceIsReady) {
-      this.placeDetailsService.nearbySearch(
-        {
-          location: {
-            lat: location.latitude,
-            lng: location.longitude,
+      return new Promise((resolve, reject) => {
+        this.placeDetailsService.nearbySearch(
+          {
+            location: {
+              lat: location.latitude,
+              lng: location.longitude,
+            },
+            radius: 40000,
+            types: place ? [place] : [''],
+            name,
           },
-          radius: 4000,
-          types: [place],
-        },
-        (res) => {
-          if (res) {
-            let parse = JSON.parse(JSON.stringify(res));
-            console.log(parse);
+          (res) => {
+            if (res) {
+              let parse = JSON.parse(JSON.stringify(res));
+              resolve(parse);
+            }
           }
-        }
-      );
+        );
+      });
     }
   }
 }
