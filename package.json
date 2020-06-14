@@ -78,10 +78,9 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-android-support-gradle-release": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }
