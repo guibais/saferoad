@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 import { VoiceAssistService } from '../services/voice-assist.service';
 import { PlacesService } from '../services/places.service';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-voice-assist',
   templateUrl: './voice-assist.page.html',
@@ -14,7 +15,8 @@ export class VoiceAssistPage implements OnInit {
   constructor(
     private speechRecognition: SpeechRecognition,
     private _voiceAssist: VoiceAssistService,
-    private _places: PlacesService
+    private _places: PlacesService,
+    private location: Location
   ) {}
 
   ngOnInit() {}
