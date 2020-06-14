@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 
 @Component({
   selector: 'app-voice-assist',
@@ -7,7 +7,16 @@ import { Location } from '@angular/common';
   styleUrls: ['./voice-assist.page.scss'],
 })
 export class VoiceAssistPage implements OnInit {
-  constructor(private location: Location) {}
+  private isRecording = false;
+  constructor(private speechRecognition: SpeechRecognition) {}
 
   ngOnInit() {}
+
+  async toggleRecording() {
+    this.isRecording = !this.isRecording;
+    if (this.isRecording) {
+      const hasPermission = await this.speechRecognition.hasPermission();
+      console.log(hasPermission);
+    }
+  }
 }
