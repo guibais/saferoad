@@ -80,7 +80,6 @@
     justify-content: center;
     align-items: center;
     .record-button {
-      background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
       width: 70px;
       height: 70px;
       position: relative;
@@ -94,7 +93,6 @@
         position: relative;
         border-radius: 50%;
         div {
-          background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
           top: 25%;
           left: 25%;
           width: 50%;
@@ -127,4 +125,84 @@
   font-style: normal;
   font-size: 22px;
   line-height: 22px;
+}
+
+.record-button--notrecording {
+  background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+  div {
+    div {
+      background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+    }
+  }
+}
+
+.record-button--recording {
+  background: linear-gradient(
+    99deg,
+    #9e51ff,
+    #d251ff,
+    #c54242,
+    #851a1a,
+    #2800ff,
+    #1d088e,
+    #18ff00,
+    #149f05
+  );
+  background-size: 1600% 1600%;
+  -webkit-animation: Recording 2s ease infinite;
+  -moz-animation: Recording 2s ease infinite;
+  animation: Recording 2s ease infinite;
+  div {
+    div {
+      background: linear-gradient(
+        99deg,
+        #9e51ff,
+        #d251ff,
+        #c54242,
+        #851a1a,
+        #2800ff,
+        #1d088e,
+        #18ff00,
+        #149f05
+      );
+      background-size: 1600% 1600%;
+      -webkit-animation: Recording 2s ease infinite;
+      -moz-animation: Recording 2s ease infinite;
+      animation: Recording 2s ease infinite;
+    }
+  }
+}
+
+@-webkit-keyframes Recording {
+  0% {
+    background-position: 0% 42%;
+  }
+  50% {
+    background-position: 100% 59%;
+  }
+  100% {
+    background-position: 0% 42%;
+  }
+}
+@-moz-keyframes Recording {
+  0% {
+    background-position: 0% 42%;
+  }
+  50% {
+    background-position: 100% 59%;
+  }
+  100% {
+    background-position: 0% 42%;
+  }
+}
+@keyframes Recording {
+  0% {
+    background-position: 0% 42%;
+  }
+  50% {
+    background-position: 100% 59%;
+  }
+  100% {
+    background-position: 0% 42%;
+  }
 }
