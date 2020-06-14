@@ -43,7 +43,7 @@ export class PlacesService {
               lat: location.latitude,
               lng: location.longitude,
             },
-            radius: 4000,
+            radius: 40000,
             types: place ? [place] : [''],
             name,
           },

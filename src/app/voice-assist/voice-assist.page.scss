@@ -54,11 +54,7 @@
           color: white;
           text-align: right;
 
-          background: linear-gradient(
-            2.03deg,
-            rgba(158, 81, 255, 0.8) 27.09%,
-            rgba(210, 81, 255, 0.86) 64.13%
-          );
+          background: linear-gradient(2.03deg, #3834fa 27.09%, #3834fa 64.13%);
           position: relative;
         }
         &--last {
@@ -142,10 +138,10 @@
 }
 
 .record-button--notrecording {
-  background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+  background: linear-gradient(102.38deg, #3834fa 9%, #3834fa 54.34%);
   div {
     div {
-      background: linear-gradient(102.38deg, #9e51ff 9%, #d251ff 54.34%);
+      background: linear-gradient(102.38deg, #3834fa 9%, #3834fa 54.34%);
     }
   }
 }
