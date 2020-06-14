@@ -16,7 +16,7 @@ export class VoiceAssistPage implements OnInit {
     private speechRecognition: SpeechRecognition,
     private _voiceAssist: VoiceAssistService,
     private _places: PlacesService,
-    private location: Location
+    public location: Location
   ) {}
 
   ngOnInit() {}

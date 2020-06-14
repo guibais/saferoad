@@ -1,0 +1,70 @@
+<div class="dashpage">
+  <div class="dashpage__main">
+    <div class="dashpage__main--top">
+      <div class="dashpage__main--top--icon">
+        <ion-icon
+          class="dashpage__main--top--icon--1"
+          name="chevron-down-sharp"
+        ></ion-icon>
+        <ion-icon
+          class="dashpage__main--top--icon--2"
+          name="chevron-down-sharp"
+        ></ion-icon>
+      </div>
+      <img src="../../assets/logo-saferoad.png" alt="" />
+    </div>
+    <div class="dashpage__main--bottom">
+      <div class="dashpage__main--bottom--text-question">
+        <ion-text class="dashpage__main--bottom--text-question">
+          Como você está se sentindo?
+        </ion-text>
+      </div>
+      <div class="dashpage__main--bottom--separador">
+        <ion-item-divider></ion-item-divider>
+      </div>
+      <div class="dashpage__main--bottom--buttons">
+        <div class="dashpage__main--bottom--buttons--bem--div">
+          <ion-button class="dashpage__main--bottom--buttons--bem">
+            <ion-icon name="happy-outline"></ion-icon> &nbsp; Bem
+          </ion-button>
+        </div>
+        <ion-button class="dashpage__main--bottom--buttons--mal">
+          <ion-icon name="sad-outline"></ion-icon> &nbsp; Mal &nbsp;
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashpage__content">
+    <div class="dashpage__content__cards">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" *ngFor="let button of listButtons">
+            <ion-button class="dashpage__content__cards--card">
+              <div class="dashpage__content__cards--card--container">
+                <div class="dashpage__content__cards--card--container--line">
+                  <ion-icon
+                    [ngStyle]="{ color: button.color }"
+                    [name]="button.icon"
+                  ></ion-icon>
+                  <div class="divider"></div>
+                  <div
+                    class="dashpage__content__cards--card--container--line--title"
+                  >
+                    {{ button.title }}
+                  </div>
+                </div>
+                <div
+                  [ngStyle]="{ color: button.color }"
+                  class="dashpage__content__cards--card--container--description"
+                >
+                  {{ button.description }}
+                </div>
+              </div>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>

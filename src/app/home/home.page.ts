@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    direction: 'vertical',
+  };
   constructor(public router: Router) {}
   goToVoiceAssist() {
     this.router.navigate(['/voice-assist']);

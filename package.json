@@ -4,7 +4,8 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "ng",
+    "serve": "ionic serve",
+    "android": "ionic capacitor run android -l",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
